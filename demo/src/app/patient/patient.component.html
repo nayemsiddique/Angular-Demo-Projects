@@ -1,0 +1,91 @@
+<div class="container-fluid" >
+    <div class="row">
+      <div class="col-lg-9">
+
+            <h2 style="text-align: center;">User Info</h2>
+            <table class="table table-bordered table-hover">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Id</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Phone Number</th>
+                  <th scope="col">Address</th>
+                  <th scope="col">Age</th>
+                  <th scope="col">Gender</th>
+                  <th scope="col">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr  *ngFor="let p of patient;let i=index">
+        
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{p.name}}</td> 
+                  <td>{{p.id}}</td>
+                  <td>{{p.email}}</td>
+                  <td>{{p.phone}}</td>
+                  <td>{{p.address}}</td>
+                  <td>{{p.age}}</td>
+                  <td>{{p.gender}}</td>
+                  <!-- <div class="form-group col-md-5">
+                    <input type="button" value="Delete" (click)="deleteAction(i)">
+                  </div> -->
+                  <input type="button" value="Delete" (click)="deleteAction(i)">
+                  <input type="button" value="Edit" (click)="editAction(i)">
+                  
+                </tr>
+               
+         
+              </tbody>
+            </table>
+  </div>
+  
+  <div class="col-lg-3">
+       
+            <h2 style="text-align: center;">Create User</h2>
+                <div class="form-group">
+                  <label for="name">Name<span style="color:red">*</span></label>
+                  <input type="text" class="form-control" id="name"  [formControl]="name" placeholder="Enter Name" required>
+                </div>
+        
+                <div class="form-group">
+                  <label for="id">Id<span style="color:red">*</span></label>
+                  <input type="text" class="form-control" id="id"  [formControl]="id" placeholder="Enter id"  required>
+          </div>
+
+                 <div class="form-group">
+                        <label for="address">Address<span style="color:red">*</span></label>
+                        <input type="text" class="form-control" id="address"  [formControl]="address" placeholder="Enter Address"  required>
+                </div>
+           
+
+                <div class="form-group">
+                  <label for="email">Email<span style="color:red">*</span></label>
+                  <input type="email" class="form-control" id="email"   [formControl]="email" placeholder="Enter Email"  required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number<span style="color:red">*</span></label>
+                  <input type="text" class="form-control" id="phone"  [formControl]="phone" placeholder="Enter Phone Number"  required>
+                </div>
+                <div class="form-group">
+                        <label for="age">Age<span style="color:red">*</span></label>
+                        <input type="text" class="form-control" id="age"  [formControl]="age" placeholder="Enter age"  required>
+                      </div>
+                
+                 <div class="form-group">
+                  <label for="sel1">Gender<span style="color:red">*</span></label>
+                  <select class="form-control" id="sel1" [(ngModel)]='CSelect' [formControl]="gender" style="width:35%">
+
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 90px; margin-right:2px" (click)="setvalue()">Save</button>
+                <button type="submit" [disabled]="isDisabled" class="btn btn-primary" style="width: 90px;" (click)="OnEditButtonMouseAction()">Edit</button>
+  
+  </div>
+  
+  </div>
