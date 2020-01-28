@@ -1,0 +1,32 @@
+
+<div class="container">
+    <h2>Student Registration Form</h2>
+
+    <form #studentForm="ngForm" > 
+        {{ studentForm.value | json}}
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" #name="ngModel" [class.is-invalid]="name.invalid && name.touched" class="form-control"name="name" id="name" [(ngModel)]="student.name" placeholder="Enter your Name" required>
+        <small class="text-danger" [class.d-none]="name.valid">Name is required </small>
+    </div> 
+
+    <div class="form-group">
+        <label for="id">Id</label>
+        <input type="text" class="form-control" name="id" id="id" [(ngModel)]="student.id"placeholder="Enter your Id" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" id="email" [(ngModel)]="student.email"placeholder="Enter your Email" required>
+    </div>
+
+    <div class="form-group">
+        <label for="address">address</label>
+        <input type="text" class="form-control" name="address" id="address" [(ngModel)]="student.address"placeholder="Enter your Name" required>
+    </div>
+
+    <button type="submit" [disabled]="studentForm.form.invalid" class="btn btn-primary">Submit</button>
+
+    
+    </form>
+</div>
