@@ -1,0 +1,10 @@
+<!-- {{_error}} -->
+<ul *ngFor="let s of students">
+    <li>{{s?.id}} - {{s?.name.firstName }} {{s?.name.lastName}} - {{s?.role}} -{{s?.salary}}</li>
+</ul>
+
+<input type="text" name="name" id="name" [(ngModel)]="fname" /> 
+
+<button (click)="onClckBtn()"> Change Name</button>
+
+{{fname}}
