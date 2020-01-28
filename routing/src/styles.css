@@ -1,0 +1,11 @@
+.badge{
+    background: palegoldenrod;
+    padding: 10px;
+}
+.badge:hover{
+    background-color: bisque;
+}
+.item{
+    margin: 10px;
+    cursor: pointer;
+}

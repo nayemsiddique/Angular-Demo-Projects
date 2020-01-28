@@ -1,0 +1,7 @@
+<h2>Student List</h2>
+
+<ul class="items">
+    <li  (click)="onclickAction(students)"*ngFor="let s of students" style="list-style: none;" class="item">
+        <span class="badge">{{s.id}} {{s.name}} </span>
+     </li>
+</ul>
